@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图通用插件</title>
+    <style>
+        #banner {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+    </div>
+
+    <script src="./banner.js"></script>
+    <script>
+        var bannerDiv = document.getElementById('banner');
+        createBannerArea(bannerDiv, [
+            {imgUrl:'./img/banner1.jpg', link:'www.baidu.com'},
+            {imgUrl:'./img/banner2.jpg', link:'www.baidu.com'},
+            {imgUrl:'./img/banner3.webp', link:'www.baidu.com'},
+            {imgUrl:'./img/banner4.jpg', link:'www.baidu.com'},
+            {imgUrl:'./img/banner5.webp', link:'www.baidu.com'}
+        ])
+    </script>
+</body>
+
+</html>

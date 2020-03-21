@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轮播图</title>
+</head>
+<style>
+  .banner {
+    width: 520px;
+    height: 280px;
+    margin: 20px auto;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid red;
+  }
+</style>
+<body>
+  <div class="banner">
+    <img src="img/banner1.jpg" alt="">
+    <img src="img/banner2.jpg" alt="">
+    <img src="img/banner3.webp" alt="">
+  </div>
+  <script>
+    var imgArr = document.getElementsByTagName('img');
+        var num = 0
+        var timer = setInterval(function(){
+          num += -520;
+          imgArr[0].style.marginLeft = num + 'px';
+          if (num == (imgArr.length)*-520) {
+            num = 0;
+            imgArr[0].style.marginLeft = '0px'
+          }
+        },3000)
+        // clearInterval(timer);
+  </script>
+</body>
+</html>
