@@ -6,16 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-  <style>
-  </style>
+
 <body>
   <script>
-    function test(a,b) {
-      console.log(a,b);
-      
+    let num = 11;
+    let promise = new Promise((resolve, reject) => {
+      if (num === 10) {
+        resolve('aaa');
+      } else {
+        reject('bbb')
+      }
+    })
+    promise.then(res=>{
+      console.log(res);
+    },err=>{
+      console.log(err);
+    })
+    
 
-    }
-    test('love','like');
+
   </script>
 </body>
 
