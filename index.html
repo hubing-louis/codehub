@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+ 
 </head>
-
 <body>
+  <div id="app">
+    <my-content :title="title" :content="content"></my-content>
+  </div>
   <script>
-    let num = 11;
-    let promise = new Promise((resolve, reject) => {
-      if (num === 10) {
-        resolve('aaa');
-      } else {
-        reject('bbb')
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        title: '和范德萨恢复健康斯拉夫的',
+        content: '放大范德萨66666666666发哈德克利夫获得了萨芬发动机萨芬老客户的萨拉方法和的萨芬回到拉萨和浮动'
+      },
+      components: {
+        myContent: {
+          props: ['title', 'content'],
+          props: {
+            title: {
+              type: String,
+              default: 'bibibi'
+            },
+            content: {
+              type: String,
+              required: true
+            }
+          },
+          template: `
+          <div>
+            <h4>{{ title }}</h4>
+            <p>{{ content }}</p>
+          </div>
+        `
+        }
       }
     })
-    promise.then(res=>{
-      console.log(res);
-    },err=>{
-      console.log(err);
-    })
-    
-
-
   </script>
 </body>
-
 </html>
